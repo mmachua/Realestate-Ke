@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "resident-350617",
+  "private_key_id": "ac1bb1a1a8dab005e6efe8d48bb29078bc6a710a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6EdrIVhRlEnMu\niWBrTx6bfESfwml06qQVHo0nmH3+/KLNAV+xRB7HY7DOt76ZgnEbFaGn7Gl13dbs\nkRpR/r6x3ErIVu0ZdhlWdkWhrjRh6fKH6I2HEK1f8wd/5fautJs3BfVb06zcSvSN\n8KWUq1Brl3n+r+h37zKCfVCaHACBPmjDACEhrfLa7iwbDjf1yY44fJlGAh435sY8\n6pB81wS7WW8s2mjzeKMkISFeL+nDZht9MEProxq5ss64VwHXTLF5mYFBsE0ix3YA\nX5MQ0hERdrPSIXEqwQ52BsgKfOgB09XuOz+LQIQg1u/b+hcyVvyRXOcuoa6X9xMi\nLiHEWfuVAgMBAAECggEAVXeUDgd0EMT7wTl632+VOIhJITT0qa6JteW1oqVp4nD6\n+r2RzePjW2TQNvOxieOfvngeK/rsqiY+7aTs+RLRVvNAKmu7NsHHe66R52UUTJFg\nRMsuDwc7C+Ke5EGmILN2xDxpakd9lCad1IDgHbzfELygXbtBRa3KfqO/HTqVhMd0\nR/1hnEb6RGcmVDSOHxk+46xbAgkgOe99takF+f3DQjUOhoCmIjMFSO6OMregdgCl\nsJ5mrHKy1HnTT2Nv/3/rYna9V7l4aMdY3QxQe2UJnMv9Ce8u1CQYliKtzEOarzu7\nrRcKRyRis89WujcNTDax1UW8mXJlHukwdeEcNYc3lQKBgQDiOqFT23VPzS0zqfE4\nZriH6GAR/ZgiMNVorDE9SYYEtSKsH+eHdt4Hx33jGB98PU/kVVA7/+rAJyL7/SPZ\n6URAnP3my5nxz879XlC04QTRzq5oIEhCZAXddwnFii2HmYbTF4CeBTZboJ7++JdU\n5j6kvlXFXAx0ZlTeIG0rV97S4wKBgQDSjk8fpfSvKzvs8PT5m+ENjPcHJdFrBee5\nR/krK9522lJGau9azK102NeIuZ6u+Ym60IUV0VzWo0rZEtHxITP7p4ypylBaktjj\n0Niodcch8KT0MkJJj8LY8TfGH1ElWPs4Fa3WbSAb0/m0AJ3KUqkMjfPSAE9I06+Q\nW5HQnhCpJwKBgFzUShaq2rxgKMgmV8EZBWdfRuya7q4485j770iCvud3nD6c6NiB\nQiJXDaT95Q2J6xp6l23HWYB3jrdv7CIiwcrxoI3vxb+f0gPNi7htDRk6gf5gIMZ9\nXJq/mdbhGEWoDdbYsgIliWSXyCY/w3km8VWQdImDd+jbhL+Q9rruV5SZAoGBALwW\nxDfRWDLivDV9SllwFiq0sjeAYQLp04Z/9OXL2n7xqG2fORIzpP+sdV1983L7Fz36\n5+gFjpluZX5kgYaV0ooLsmw6fm1qoLVh6ykRjUGUZsZ93xk3gyeo09n4P9TNGB2R\nwCi8cuJpCbbylgIWtUyxwgzmmezErSCXrDpf+SIhAoGAIwPhe1cQDgQSvHfKcwcr\nwwLTqIRwJEdxzSIzvvKxUIc/bWPvw3iPDFeGiNuGt3e3ZF44WxzXSGvxBqR+BKz7\nwcCpc7Rd6Sg2p5+GUxMrDDr8vE1tFFesfUYXA8MSFZikECR/mxhFywLSxWrmoG89\nuRq9T6zBBmzh9E0aI4SRsY4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "residentgeolocate@resident-350617.iam.gserviceaccount.com",
+  "client_id": "105462493605034541516",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/residentgeolocate%40resident-350617.iam.gserviceaccount.com"
+}

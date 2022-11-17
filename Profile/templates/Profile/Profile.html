@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{{%  block head %}
+<title>Agency Account</title>
+{% endblock head  %}}
+
+{% block body %}
+
+<div class="row">
+<!-- Fisrt section -->
+            <div class="col-12 col-sm-6 col-md-3">
+            <br/>
+                  <div class="container">
+            <div class=" card container shadow-sm  border " style="width: 19rem;"><br>
+                <img class="border border-grey"  src="{% if user.shop.image %}
+                              {{ user.shop.image.url  }}{% else %}https://images.unsplash.com/photo-1625250564384-a46e5eb9d89c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=529&q=80{% endif  %}
+                              " class="img-responsive" style="width:21.2.5rem; height:15rem; " alt="Card image cap">
+                
+                <div class="card-body">
+                  <h5 class="card-title center"> <b>{{ user.username }}</b></h5>
+                  
+                  <p class="card-text">
+              <hr>
+                  
+                  
+                  <p>{{ user.shop.description }}</p>
+                  
+                  <p><b>Office Location</b>: {{ user.shop.building }}</p>
+                
+                  <p><b>Contact</b>: {{ user.shop.phone }}</p>
+                  <p><b>County</b>: {{ user.shop.county }}</p>
+                  
+        
+                  
+                </div>
+                      
+              </div>
+                      
+            </div> 
+            </div>
+
+<!-- second section -->
+            <div class="col-12 col-sm-9 col-md-9">
+            <br/>
+                {% for busines in business %}
+                                        
+                                <span class="separator">
+                                    <div class="row" style="width: 18rem; height:18rem; display:table-row-group;"  >
+                                        
+                                        <div class="card  border-grey border-top-0 mb-3 shadow-sm " >
+                                            <a href="{{ busines.get_absolute_re_path }}">
+                                                <img src="{% if busines.image %}{{ busines.image.url }}{% else %}https://images.unsplash.com/photo-1510265236892-329bfd7de7a1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387{% endif  %}" style="width: 14rem; height:13.5rem;">
+                                            </a>
+                                            <hr/>
+                                            <div class="container">
+                                        
+                                            <b>county:</b>{{ busines.county }}
+                                          
+                                        </div>
+                                         <div class="">
+                                               <b>category:</b> {{ busines.category }}
+                                              </div>
+                                            
+                                            <div class="container">
+                                               <b>building:</b> {{ busines.building }}
+                                            
+                                        </div>
+                                        <div class="">
+                                               <b> Landmark:</b> {{ busines.landmark }}
+                                              </div>
+                                       
+                                        </div>
+                                        </div>
+                                    </span>  
+                                    {% endfor %}      
+                           
+            </div>
+
+
+
+
+</div>
+
+
+
+{% endblock body %}
+
+

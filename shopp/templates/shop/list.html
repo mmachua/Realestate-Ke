@@ -1,0 +1,70 @@
+{% extends "base.html" %} 
+{% load crispy_forms_tags %} 
+{ {% block head %}
+    <title>Favourite</title>
+{% endblock head %}}
+
+{% block body %}
+
+
+<br/>
+
+
+
+
+    <div class="container">
+    {% for busines in business %}
+                                        
+                                <span class="separator">
+                                    <div class="row" style="width: 18.2rem; height:18.4rem; display:table-row-group;"  >
+                                        
+                                        <div class="card-body border-grey mb-3 shadow" >
+                                            <a href="{{ busines.get_absolute_re_path }}">
+                                                <img src="{% if  busines.image %}{{  busines.image.url }}{% else %}https://images.unsplash.com/photo-1605475161596-c8ded579e67a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80{% endif  %}" style="width: 18.2rem; height:13.5rem;">
+                                            </a>
+                                            <hr/>
+                                            <div class="container">
+                                            <div class="">
+                                               <b>category:</b> {{ busines.category }}
+                                              </div>
+                                           <b>County:</b>{{ busines.county }}
+                                           <div class="">
+                                               <b> Landmark:</b> {{ busines.landmark }}
+                                               
+                                              </div>
+                                              <b> by:</b> {{ busines.user.username }}
+                                             
+                                            
+                                        </div>
+                                            
+                                            
+                                      
+                                       
+                                        
+                                        </div>
+                                        </div>
+                                    </span>  
+                                    {% endfor %}      
+                           
+
+                </div>
+
+
+
+
+
+{% include "pagination.html" %} 
+
+      <hr/>
+     
+     
+      <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+              
+            <p>Favourite Developers &copy; 2022 <a href="{% url 'home:privacy' %}">Privacy</a> Favourite <a href="{% url 'home:terms' %}">Terms</a> <a href="{% url 'home:Contact' %}">contact us</a>
+          </footer>   
+    
+   
+    
+
+{% endblock body %}

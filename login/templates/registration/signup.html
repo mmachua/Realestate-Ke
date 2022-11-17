@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{{%  block head %}
+<title>create an account</title>
+{% endblock head  %}}
+
+
+{% block body %}
+
+
+<br/>
+<div class="container">
+  <h2>Sign up for a free account</h2>
+  <p class="lead">Welcome to RESIDENT, signup to get a unique  address.
+   </p>
+  <a href="{% url 'client_signup' %}" class="btn btn-info btn-sm" role="button">create an account</a>
+  
+</div>
+
+
+{% endblock body %}

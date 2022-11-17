@@ -1,0 +1,241 @@
+ {% load static %}
+ <!DOCTYPE html>
+ <html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    {% comment %} <meta name="viewport" content="width=device-width, initial-scale=1"> {% endcomment %}
+    
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+     {% comment %} <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjj5OT0bp2DdeZ0r59OBcduelJWX-SAA0&libraries=places&callback=initMap&solution_channel=GMP_QB_addressselection_v1_cABC" async defer></script> {% endcomment %}
+
+    {% comment %} <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% endcomment %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login/style.css'%}" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="https://img.freepik.com/free-vector/eco-green-buildings-icons-skyscrapers-isolated-sketch-v_98292-4489.jpg?w=740&t=st=1667124371~exp=1667124971~hmac=d1eb7131d31eb2a9761fe127c56d2a18e5078b4989a4eb2ed36b401bf2501da3">
+ 
+      {% block head %}
+      <title>base</title>
+    
+      {% endblock %}
+      
+</head>
+<body>
+
+
+
+                <nav class="navbar sticky-top navbar-expand-lg navbar-light " style="background-color:#039366">
+                        <a class="navbar-brand text-white" style="color:FF0000" href="{% url 'shopp:product_list'  %}"><h6><b>Favourite</b></h6></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                      
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          
+                              
+                                <li class="nav-item active mr-auto">
+                                        <a class="nav-link text-white" href="{% url 'shopp:businessadress_form'  %}">Post</a>
+                                  </li>
+                                <li class="nav-item active mr-auto">
+                                        <a class="nav-link text-white" href="{% url 'Profile:favouriteshops'  %}">All Agents</a>
+                                  </li>
+                                <li class="nav-item active mr-auto">
+                                        <a class="nav-link text-white" href="{% url  'Profile:about' %}">About</a>
+                                  </li>
+
+                          </ul>
+
+
+                            
+
+
+                                      <!-- Example single small button -->
+                                <li class="nav item">
+                                  {% if user.is_authenticated %}
+                                  <div class="dropdown">
+                           
+                                    <div class="btn-group">
+                                                <button class="btn text-white btn-sm  dropdown-toggle" style="background-color:#039366" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Profile
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                     {% if user.is_shop %}
+                                                          <a class="dropdown-item"  href="{% url  'Profile:Shopadmin' %}">Business Account</a>
+                             
+                                                        {% else %}
+                                                          <a class="dropdown-item"  href="{% url  'Profile:Shopadmin' %}">Business Account</a>
+                                                        {% endif %}
+                                                    
+                                                    <a class="dropdown-item" href="{% url 'login:profile'  %}">Account</a>
+                                                    <a class="dropdown-item" href="{% url 'home:terms'  %}">Terms</a>
+                                                    
+                                                    <a class="dropdown-item" href="{% url 'login:logout' %}">Logout</a>
+
+                                                </div>
+                                                </div>
+                                              {% else  %}
+                                      <div class="dropdown">
+                           
+                                    <div class="btn-group">
+                                                <button class="btn  text-white btn-sm  dropdown-toggle" style="background-color:#039366" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Account
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                  
+                                                    <a class="dropdown-item" href="{% url 'login'  %}">sign in</a>
+                                                    <a class="dropdown-item" href="{% url 'signup'  %}">sign up</a>
+                                                    {% comment %} <a class="dropdown-item" href="{ % url 'login:reset_password'  %}">reset-password </a> {% endcomment %}
+                                                    <a class="dropdown-item" href="{% url 'login:logout' %}">Logout</a>
+
+                                                </div>
+                                                </div>
+                               
+                                               {% endif %}
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                
+                  
+                  <a class="dropdown-item" href="{% url 'login:profile' %}">
+                            View Profile                 
+                  </a>
+                 
+                                
+                                {% if user.is_shop %}
+                                    <a class="dropdown-item"  href="{% url  'Profile:Shopadmin' %}">Resident admin</a>
+                                 
+                                
+                                    
+                                  {% else %}
+
+                                  {% endif %}
+                                 
+
+
+
+
+                  
+                 
+              </div>
+            </div>
+          </li>
+              
+              
+<br>
+
+
+
+                                <form   class="form-inline my-2 my-lg-0" action='{% url 'shopp:product_list' %}'>
+                                
+                                   
+                                        <input  type="search" class="form-control outline-info btn-sm mr-sm-2"  placeholder="Search" name='q'>
+                                     {% csrf_token %}      
+                                        <button class="btn btn-light btn-sm btn my-2 my-sm-0" type="submit">Search</button>
+                                      </form>
+                                
+                        </div>
+                      </nav>  
+       
+    {% block body%}
+    <h1>Base</h1>
+    {% endblock %}
+
+
+
+
+
+    <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+{% comment %} <script>
+    "use strict";
+
+    function initMap() {
+      const CONFIGURATION = {
+        "ctaTitle": "Checkout",
+        "mapOptions": {"center":{"lat":37.4221,"lng":-122.0841},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":true,"zoom":11,"zoomControl":true,"maxZoom":22},
+        "mapsApiKey": "AIzaSyCjj5OT0bp2DdeZ0r59OBcduelJWX-SAA0",
+        "capabilities": {"addressAutocompleteControl":true,"mapDisplayControl":true,"ctaControl":true}
+      };
+      const componentForm = [
+        'location',
+        'locality',
+        'administrative_area_level_1',
+        'country',
+        'postal_code',
+      ];
+
+      const getFormInputElement = (component) => document.getElementById(component + '-input');
+      const map = new google.maps.Map(document.getElementById("gmp-map"), {
+        zoom: CONFIGURATION.mapOptions.zoom,
+        center: { lat: 37.4221, lng: -122.0841 },
+        mapTypeControl: false,
+        fullscreenControl: CONFIGURATION.mapOptions.fullscreenControl,
+        zoomControl: CONFIGURATION.mapOptions.zoomControl,
+        streetViewControl: CONFIGURATION.mapOptions.streetViewControl
+      });
+      const marker = new google.maps.Marker({map: map, draggable: false});
+      const autocompleteInput = getFormInputElement('location');
+      const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
+        fields: ["address_components", "geometry", "name"],
+        types: ["address"],
+      });
+      autocomplete.addListener('place_changed', function () {
+        marker.setVisible(false);
+        const place = autocomplete.getPlace();
+        if (!place.geometry) {
+          // User entered the name of a Place that was not suggested and
+          // pressed the Enter key, or the Place Details request failed.
+          window.alert('No details available for input: \'' + place.name + '\'');
+          return;
+        }
+        renderAddress(place);
+        fillInAddress(place);
+      });
+
+      function fillInAddress(place) {  // optional parameter
+        const addressNameFormat = {
+          'street_number': 'short_name',
+          'route': 'long_name',
+          'locality': 'long_name',
+          'administrative_area_level_1': 'short_name',
+          'country': 'long_name',
+          'postal_code': 'short_name',
+        };
+        const getAddressComp = function (type) {
+          for (const component of place.address_components) {
+            if (component.types[0] === type) {
+              return component[addressNameFormat[type]];
+            }
+          }
+          return '';
+        };
+        getFormInputElement('location').value = getAddressComp('street_number') + ' '
+                  + getAddressComp('route');
+        for (const component of componentForm) {
+          // Location field is handled separately above as it has different logic.
+          if (component !== 'location') {
+            getFormInputElement(component).value = getAddressComp(component);
+          }
+        }
+      }
+
+      function renderAddress(place) {
+        map.setCenter(place.geometry.location);
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+      }
+    }
+    </script> {% endcomment %}
+
+
+    
+
+</body>
+</html>

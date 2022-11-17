@@ -1,0 +1,74 @@
+{% extends "base.html" %} 
+{% load crispy_forms_tags %} 
+{ {% block head %}
+    <title>Estates and Realtors</title>
+{% endblock head %}}
+
+{% block body %}
+
+
+<br/>
+
+
+
+
+    <div class="container">
+    {% for busines in business %}
+                                        
+                                <span class="separator">
+                                    <div class="row" style="width: 18rem; height:18rem; display:table-row-group;"  >
+                                        
+                                        <div class="card  border-grey border-top-0 mb-3 shadow-sm " >
+                                            <a href="{{ busines.get_absolute_re_path }}">
+                                                <img src="{% if busines.image %}{{ busines.image }}{% else %}https://images.unsplash.com/photo-1510265236892-329bfd7de7a1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387{% endif  %}" style="width: 14rem; height:13.5rem;">
+                                            </a>
+                                            <hr/>
+                                            <div class="container">
+                                            <a href="">{{ busines.businessname }}</a><br/>
+                                            {{ busines.county }}
+                                              B000{{ busines.uniqueadress }}  
+                                            
+                                        </div>
+                                            
+                                            <div class="container">
+                                                {{ busines.building }}
+                                            
+                                        </div>
+                                      
+                                        <div class="container"><a href="/home/map/"><b>show on map</b></a>
+
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                    class="bi bi-share" viewBox="0 0 16 16">
+                                                        <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                                                        </svg>
+                                            
+                                        <br/></div>
+                                        
+                                        </div>
+                                        </div>
+                                    </span>  
+                                    {% endfor %}      
+                           
+
+                </div>
+
+
+
+
+
+{% include "paginationn.html" %} 
+
+      <hr/>
+     
+     
+      <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+              
+            <p> &copy; 2022 <a href="{% url 'home:privacy' %}">Privacy</a> Residence Technology <a href="#">Terms</a></p>
+          </footer>   
+    
+   
+    
+
+{% endblock body %}
+

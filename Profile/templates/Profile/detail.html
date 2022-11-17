@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+<!--title of the page-->
+{% block head %}
+<title>{{ user.username }}</title>
+{% endblock head %}
+<!--end title-->
+
+<!--the body contents should be displayed here-->
+
+{% load social_share %}
+{% block body %}
+
+<br/>
+
+<div class="container">
+
+         
+
+
+
+
+
+
+
+
+
+
+          <div class="card" style="width: 18rem;">
+                  <img src="{% if resident.image %}
+                              {{ resident.image.url }}{% else %}https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80{% endif  %}" style="width: 18rem; height:15.5rem;"
+                   class="card-img-top" alt="...">
+                   <div class="card-body">
+                      <h4 class="card-title">My Address</h4>
+                      <h6 class="card-text"><b> County:</b> {{ resident.county }}</h6>
+                      <h6 class="card-title"><b> Building:</b>{{ resident.building }}</h6>
+                      <h6 class="card-title"></h6>
+                      <h6 class="card-text"><b> Adrress: </b>R00{{ resident.uniqueadress }} </h6>
+                  
+
+                                             <div class="">
+                                               Floor No.{{ resident.floor_no }}| Door No.{{ resident.door_no }}
+                                             </div>
+                                             <div class="">
+                                               <b> Landmark:</b> {{ resident.landmark }}
+                                              </div>
+                                            <div class="">
+                                               <b>Description:</b> {{ resident.description }}
+                                              </div>
+
+
+                                              
+                                            
+                                             
+                                           <br>
+                                            <b>
+                                            {% post_to_twitter text_to_post object_or_url %}
+                                            {% post_to_facebook object_or_url %}
+                                            {% post_to_whatsapp object_or_url %}
+                                            {% post_to_linkedin object_or_url %}
+                                            </b>
+                                            <div> {{ map | safe }}</div>
+                                            
+
+
+                    </div>
+                </div>
+         </div>
+
+<div class="footer" style="color:olive;">
+        <hr/>
+        <div class="copyright">
+          <div class="container">
+            <span>Favourite &copy; 2022</span>
+        </div>
+      </div>
+    </div>
+
+
+
+ {% endblock body %}
+ <!--end block content-->

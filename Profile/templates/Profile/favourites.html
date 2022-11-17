@@ -1,0 +1,135 @@
+{% extends "base.html" %}  
+
+
+{ {% block head %}
+    <title>All Agents</title>
+{% endblock head %}}
+
+{% block body %}
+<nav class="navbar navbar-expand text-black shadow navbar " style="background-color:white;"><b>All Agents</b></nav>
+<br/>
+
+
+
+
+    <div class="row no-gutters">
+    <!--fist part-->
+            <div class="col-12 col-sm-6 col-md-3">
+
+          
+
+            
+            </div>
+    <!--end fisrt part-->
+
+
+    <!--second secton-->
+        <div class="col-12 col-sm-6 col-md-9" style="color:rgb(21, 20, 13)">
+
+
+
+        
+       <div class="container"> 
+       {% for user in users %}   
+       {% if user.is_staff %}   
+       {% if user.is_shop %}   
+          <div class="">
+                
+                <div class="mw-100 card">
+          
+          
+          
+          <div class="card-body " >
+              
+                    <div class="row">
+                                <div class="col-12 col-md-3">
+                                    <a href="{% url 'Profile:view_profile_with_pk' pk=user.pk %}">
+                            
+                            
+                                         <img class="border border-grey rounded" src="{% if user.shop.image %}
+                                                     {{ user.shop.image.url  }}{% else %}https://images.unsplash.com/photo-1605475161596-c8ded579e67a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80{% endif  %}
+                                                    " class="img-responsive" alt="no image" style="width:7.5rem; height:6.5rem;">
+                            
+                            
+                            
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                     
+                                    <a href="{% url 'Profile:view_profile_with_pk' pk=user.pk %}">
+                                            <b>{{ user.shop.user }}{{ user.shop.shop_name|truncatechars:100 }}</b> 
+                                    </a>
+                                    </br>
+                                    <a >
+                                        <b> location: </b>  {{ user.shop.city|truncatechars:100 }}
+                                    </a>  
+                                   <a>
+                                            <p><b>contacts:</b> {{ user.shop.phone|truncatechars:100 }}</p>
+                                    </a>  
+                                        
+
+                                </div>
+                                <div class="col-12 col-md-6">
+                                <h6 style="color:teal;"><b>Description</b></h6>
+                                       <p style="color:black;">{{ user.shop.description|truncatechars:100 }}</p>
+
+                                        {% if not user in friends %}
+                    
+                    {% endif %}
+     
+
+                                </div>
+                    </div>
+
+
+               
+           
+        
+          
+         </div>
+         
+</div>
+
+         
+        </div>
+        {% else %}
+
+
+ 
+
+
+        {% endif %}
+       {% endif %}
+ {% endfor %}
+
+
+
+
+
+
+      </div>
+
+ 
+
+
+<!--end second section-->
+
+
+    <br/>
+
+{% include "paginationn.html" %} 
+
+    </div>
+    
+      <hr/>
+     
+     
+      <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+              
+            <p>Realtors and Agents &copy; 2022 <a href="{% url 'home:privacy' %}">Privacy</a> Favourite Devs <a href="#">Terms</a></p>
+          </footer>   
+    
+
+{% endblock body %}
+

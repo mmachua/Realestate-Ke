@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+{% load crispy_forms_tags %} 
+
+{{%  block head %}
+<title>reee</title>
+{% endblock head  %}}
+    
+        {% block body %}
+     
+
+   
+    
+                <!--section 2-->
+            <div class="col-12 col-sm-6 col-md-6" style="color:rgb(9, 109, 92);">
+                    
+                <b>
+                <div class="container"> 
+                    <form method="POST">
+                         {% csrf_token %}
+                         {{ form|crispy }}
+                        <button type="submit" class="btn btn-success">rewww</button>
+                    </form>
+                </div></b>
+                </div>
+                
+    
+    
+                </div>
+            
+                    
+                </div>
+               
+    
+        {% endblock body %}
+    
