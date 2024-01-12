@@ -1,6 +1,6 @@
 # Real Estate Marketplace
 
-Welcome to our Real Estate Marketplace, a platform that connects buyers and sellers in the dynamic real estate market. Whether you're looking to buy, sell, or rent properties, our marketplace offers a seamless experience for users to find their dream homes or lucrative investment opportunities.
+Real Estate Marketplace Ke, is a platform that connects buyers and sellers in the dynamic real estate market. help in buying, selling, or renting properties, the marketplace offers a seamless experience for users to find their dream homes or lucrative investment opportunities.
 
 ## Features
 
@@ -36,6 +36,7 @@ Run Development Server:
 python manage.py runserver
 Access the Application:
 Open your web browser and go to http://127.0.0.1:8000/ to explore the marketplace.
+
 ```
 #Contributing
 We welcome contributions from the community to enhance the features, fix bugs, or improve the overall user experience. If you'd like to contribute, please follow our contribution guidelines.
@@ -44,6 +45,6 @@ License
 This Real Estate Marketplace is licensed under the MIT License - see the LICENSE file for details.
 
 Contact
-If you have any questions or feedback, feel free to reach at machuamartin@gmail.com.
+If you have any questions or feedback, feel free to reach me at machuamartin@gmail.com.
 
 Happy exploring! 🏡🌐
