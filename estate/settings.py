@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c!-=z*#6fb=%4mr7rp)an=whzs+x(ha!h=at@xat$zm^(dihw0'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hunthousing.herokuapp.com','127.0.0.1:8000','http://127.0.0.1:8000', 'https://hunthousing.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -171,8 +171,8 @@ STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #mapsapikey
-GOOGLE_MAPS_API_KEY = 'AIzaSyA6v7Ze0wsbl3CovIrqcYHl0I-NBgUcJLw'
-PRIVATE_KEY = 'vUoibTinvipK6MIXgeZpttRb4LQFYuQS2Z0lxvYT'
+GOOGLE_MAPS_API_KEY = ''
+PRIVATE_KEY = ''
 
 
 
@@ -186,8 +186,8 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
 )
 
 DEFAULT_FILE_STORAGE = 'estate.gcloud.GoogleCloudMediaFileStorage'#'django.core.files.storage.FileSystemStorage'
-GS_PROJECT_ID = 'realtors-356004'
-GS_BUCKET_NAME = 'realtorsbucketheroku'
+GS_PROJECT_ID = ''
+GS_BUCKET_NAME = ''
 MEDIA_ROOT = 'media/'
 UPLOAD_ROOT = 'media/uploads/'
 MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_BUCKET_NAME)
